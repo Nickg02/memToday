@@ -80,7 +80,9 @@ namespace memTodayApi.Controllers
             _context.memTodayItems.Add(memTodayItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetmemTodayItem", new { id = memTodayItem.Id }, memTodayItem);
+            //return CreatedAtAction("GetmemTodayItem", new { id = memTodayItem.Id }, memTodayItem);
+            return CreatedAtAction(nameof(GetmemTodayItem), new { id = memTodayItem.Id }, memTodayItem);
+
         }
 
         // DELETE: api/memTodayItems/5
